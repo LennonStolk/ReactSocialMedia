@@ -1,6 +1,7 @@
 import { ApiServiceConfig } from "./api-service-config";
 import { ApiServiceUtils } from "./api-service-utils";
 import { Post } from "../models/post";
+import { User } from "../models/user";
 
 export class PostsService {
 
@@ -13,7 +14,16 @@ export class PostsService {
     // Haal alle posts op
     async getPosts() {
         let response = await fetch(this.apiBaseUrl + "posts");
-        let posts = await response.json();
+        let posts: Post[] = await response.json();
+
+        // Haal gebruikers op en koppel ze aan de posts
+        let usersResponse = await fetch(this.apiBaseUrl + "users");
+        let users = await usersResponse.json();
+        
+        for (let post of posts) {
+            post.user = users.find((user: User) => user.id == post.userId);
+        }
+
         return posts;
     }
 
