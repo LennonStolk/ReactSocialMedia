@@ -1,0 +1,46 @@
+.post-element {
+    padding: 1.5rem;
+    background-color: rgb(10, 10, 61);
+    margin: 2.5rem 0;
+    border-radius: 0.5rem;
+}
+
+.post-author {
+    color: rgb(175, 175, 175);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.post-author > a {
+    color: rgb(175, 175, 175);
+}
+
+.post-author > span {
+    color: rgb(57, 122, 157);
+}
+
+.post-title {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    font-style: italic;
+}
+
+.post-body {
+    color: rgb(175, 175, 175);
+}
+
+.post-like {
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+    border: none;
+    transition: linear 50ms;
+    background-color: rgb(42, 42, 42);
+}
+
+.post-like:hover {
+    filter: brightness(1.2);
+}
+
+.like-enabled {
+    background-color: rgb(0, 34, 170);
+}
