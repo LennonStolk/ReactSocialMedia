@@ -1,9 +1,9 @@
 import './ProfileImage.css'
 
-function ProfileImage() {
+function ProfileImage(props: { userId: string | undefined }) {
     return (
         <div className="profile-image-border">
-            <img src="http://thispersondoesnotexist.com/image" alt="" className='profile-image' loading={'eager'}/>
+            <img src={"http://thispersondoesnotexist.com/image?key=" + props.userId } className='profile-image' loading={'eager'}/>
         </div>
     )
 }

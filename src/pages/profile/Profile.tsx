@@ -9,7 +9,7 @@ function Profile() {
   return (
     <div className='container'>
       <main>
-        <ProfileImage></ProfileImage>
+        <ProfileImage userId={userId}></ProfileImage>
       </main>
     </div>
   )
