@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { Post } from '../../../models/post'
 import './PostElement.css'
 
@@ -26,7 +27,7 @@ function PostElement(props: { post: Post }) {
     return (
         <li className='post-element'>
             <h3 className='post-author'> 
-                <a href={ "/users/" + props.post.userId }>{ props.post.user?.name }</a> 
+                <Link to={ "/users/" + props.post.userId }>{ props.post.user?.name }</Link>
                 <span> van </span> 
                 { props.post.user?.company?.name } 
             </h3>
