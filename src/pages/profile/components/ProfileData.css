@@ -1,0 +1,18 @@
+.profile-data {
+    margin: 0 2rem;
+    font-weight: bold;
+}
+
+.profile-name {
+    font-size: 1.6rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-data > p {
+    line-height: 1.3rem;
+}
+
+.profile-data > p > span {
+    color: darkgrey;
+}

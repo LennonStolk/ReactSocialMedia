@@ -1,15 +1,34 @@
 import { useParams } from 'react-router-dom'
 import './Profile.css'
 import ProfileImage from './components/ProfileImage'
+import ProfileData from './components/ProfileData';
+import { useEffect, useState } from 'react';
+import { UsersService } from '../../api-service/users-service';
+import { User } from '../../models/user';
 
 function Profile() {
 
   const { userId } = useParams();
+  const [user, setUser] = useState<User>(new User(0, "-", "-", "-"));
+
+  // Haal de user op voordat de profiel pagina rendert
+  useEffect(() => {
+    if (!userId) return;
+
+    // Haalt de user op via de userservice
+    let usersService = new UsersService();
+    usersService.getUserById(+userId).then((user) => {
+      setUser(user);
+    })
+  }, []);
 
   return (
     <div className='container'>
       <main>
-        <ProfileImage userId={userId}></ProfileImage>
+        <div className="side-by-side">
+            <ProfileImage userId={userId}></ProfileImage>
+            <ProfileData user={user}></ProfileData>
+        </div>
       </main>
     </div>
   )
