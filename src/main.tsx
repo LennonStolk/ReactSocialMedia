@@ -8,10 +8,14 @@ import {
   Route,
   createRoutesFromElements,
 } from "react-router-dom";
+import Profile from './pages/profile/Profile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Home />} />
+    <Route path="/">
+      <Route path="" element={<Home />} ></Route>
+      <Route path="users/:userId" element={<Profile />} />
+    </Route>
   )
 );
 
