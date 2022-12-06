@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import './Profile.css'
+import ProfileImage from './components/ProfileImage'
 
 function Profile() {
 
@@ -8,7 +9,7 @@ function Profile() {
   return (
     <div className='container'>
       <main>
-            hello world, user { userId }
+        <ProfileImage></ProfileImage>
       </main>
     </div>
   )

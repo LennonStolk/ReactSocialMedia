@@ -1,0 +1,12 @@
+.profile-image-border {
+    background-color: white;
+    width: 12rem;
+    height: 12rem;
+}
+
+.profile-image {
+    margin: 0.25rem;
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+    border: 0.25rem solid #090d1a;
+}
