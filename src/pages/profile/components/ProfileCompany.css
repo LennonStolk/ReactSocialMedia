@@ -1,0 +1,25 @@
+.company-section {
+    margin-top: 2.5rem;
+}
+
+.company-label {
+    color: darkgray;
+    font-weight: bold;
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.company-block {
+    background-color: rgb(14, 45, 79);
+    padding: 1rem 1rem;
+    font-style: italic;
+}
+
+.company-name {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.company-catchphrase {
+    color: darkgray;
+}

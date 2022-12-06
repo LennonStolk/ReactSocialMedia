@@ -5,6 +5,7 @@ import ProfileData from './components/ProfileData';
 import { useEffect, useState } from 'react';
 import { UsersService } from '../../api-service/users-service';
 import { User } from '../../models/user';
+import ProfileCompany from './components/ProfileCompany';
 
 function Profile() {
 
@@ -28,6 +29,7 @@ function Profile() {
         <div className="side-by-side">
             <ProfileImage userId={userId}></ProfileImage>
             <ProfileData user={user}></ProfileData>
+            <ProfileCompany user={user}></ProfileCompany>
         </div>
       </main>
     </div>
