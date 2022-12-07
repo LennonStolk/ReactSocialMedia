@@ -5,7 +5,7 @@ function ProfilePosts(props: { user: User }) {
 
     function renderPosts() {
         return props.user.posts?.map(post => 
-            <div className="post-block">
+            <div className="post-block" key={post.id}>
                 "{ post.title }"
             </div>
         );
