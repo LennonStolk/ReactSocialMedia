@@ -3,6 +3,7 @@ import AppTitle from './components/AppTitle'
 import PostsList from './components/PostsList'
 import SortButton from './components/SortButton'
 import { useState } from 'react'
+import NewPost from './components/NewPost'
 
 function Home() {
 
@@ -17,6 +18,7 @@ function Home() {
     <div className='container'>
       <main>
         <AppTitle />
+        <NewPost></NewPost>
         <SortButton sortChanged={sortChangedCallback}/>
         <PostsList sortNewFirst={sortNewFirst}/>
       </main>
