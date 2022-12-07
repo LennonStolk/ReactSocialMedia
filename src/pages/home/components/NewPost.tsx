@@ -5,7 +5,7 @@ import { Post } from '../../../models/post';
 import { User } from '../../../models/user';
 import './NewPost.css'
 
-function NewPost() {
+function NewPost(props: { postCreatedCallback: any }) {
 
     const [name, setName] = useState("");
     const [company, setCompany] = useState("");
@@ -28,7 +28,14 @@ function NewPost() {
         // Voegt de nieuwe post toe aan de (neppe) backend
         let postsService = new PostsService();
         postsService.createPost(newPost).then((createdPost) => {
-            console.log(createdPost);
+            // En voeg hem daarna toe aan de lijst op de homepagina
+            props.postCreatedCallback(createdPost);
+
+            // Maak het form leeg
+            setName("");
+            setCompany("");
+            setTitle("");
+            setBody("");
         });
     }
 
@@ -46,10 +53,10 @@ function NewPost() {
         <section className='new-post-section'>
             <h3 className='new-post-label'>Create post:</h3>
             <form onSubmit={ createPost } className="new-post-block">
-                <input type="text" className='text-input' placeholder='Name' onChange={ e => setName(e.target.value) }/>
-                <input type="text" className='text-input' placeholder='Company' onChange={ e => setCompany(e.target.value) }/>
-                <input type="text" className='text-input' placeholder='Title' onChange={ e => setTitle(e.target.value) }/>
-                <textarea name="" id="" className='text-area' placeholder='Message' onChange={ e => setBody(e.target.value) }></textarea>
+                <input type="text" className='text-input' placeholder='Name' onChange={ e => setName(e.target.value) } value={name}/>
+                <input type="text" className='text-input' placeholder='Company' onChange={ e => setCompany(e.target.value) } value={company}/>
+                <input type="text" className='text-input' placeholder='Title' onChange={ e => setTitle(e.target.value) } value={title}/>
+                <textarea name="" id="" className='text-area' placeholder='Message' onChange={ e => setBody(e.target.value) } value={body}></textarea>
                 <input type="submit" value="Make post" className='submit'/>
             </form>
         </section>

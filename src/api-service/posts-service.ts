@@ -44,6 +44,7 @@ export class PostsService {
             }
         });
         let newPost = await response.json();
+        newPost.id = Math.floor(Math.random() * 10000);
         return newPost;
     }
 }
