@@ -4,7 +4,7 @@ import { Post } from '../../../models/post';
 import './AppTitle.css'
 import PostElement from './PostElement';
 
-function PostsList() {
+function PostsList(props: { sortNewFirst: boolean }) {
 
     const [posts, setPosts] = useState<Post[]>([]);
 
@@ -15,6 +15,11 @@ function PostsList() {
             setPosts(allPosts);
         });
     }, []);
+
+    // Als de sorteer volgorde verandert, draai dan de array van de posts om
+    useEffect(() => {
+        setPosts(posts.slice().reverse());
+    }, [props.sortNewFirst]);
 
     // Render voor elke post die opgehaald is een Post element
     function renderPosts() {

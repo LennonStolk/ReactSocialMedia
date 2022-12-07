@@ -1,0 +1,19 @@
+.sort {
+    padding: 1rem;
+    background-color: rgb(20, 20, 58);
+    margin: 0.5rem 0;
+    border: none;
+    color: rgb(175, 175, 175);
+    transition: 100ms linear;
+}
+
+.sort:hover {
+    filter: brightness(1.2);
+}
+
+.sort-label {
+    margin-top: 3rem;
+    color: darkgray;
+    font-weight: bold;
+    line-height: 1.3rem;
+}
