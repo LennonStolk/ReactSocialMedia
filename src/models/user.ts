@@ -1,5 +1,6 @@
 import { Address } from './address';
 import { Company } from './company';
+import { Post } from './post';
 
 export class User {
 
@@ -11,6 +12,7 @@ export class User {
         public address?: Address,
         public phone?: string,
         public website?: string,
-        public company?: Company
+        public company?: Company,
+        public posts?: Post[]
     ) { }
 }
