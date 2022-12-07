@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { UsersService } from '../../api-service/users-service';
 import { User } from '../../models/user';
 import ProfileCompany from './components/ProfileCompany';
+import ProfilePosts from './components/ProfilePosts';
 
 function Profile() {
 
@@ -30,6 +31,7 @@ function Profile() {
             <ProfileImage userId={userId}></ProfileImage>
             <ProfileData user={user}></ProfileData>
             <ProfileCompany user={user}></ProfileCompany>
+            <ProfilePosts user={user}></ProfilePosts>
         </div>
       </main>
     </div>

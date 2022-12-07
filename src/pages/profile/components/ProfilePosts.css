@@ -1,0 +1,19 @@
+.posts-section {
+    width: 100%;
+}
+
+.posts-label {
+    color: darkgray;
+    font-weight: bold;
+    line-height: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+}
+
+.post-block {
+    background-color: rgb(26, 26, 79);
+    padding: 1rem 1rem;
+    margin: 1rem 0;
+    color: darkgray;
+    font-style: italic;
+}
